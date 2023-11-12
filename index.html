@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Temporizador estilo pomodoro">
+    <title>Focus Timer 2.0 - Pomodoro</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" href="assets/favicon.svg" type="image/x-svg">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script type="module" src="src/main.js" defer></script>
+</head>
+<body>
+    <div id="app">
+        <div class="timer-box">
+            <section id="timer" class="flex">
+                <span id="minutes" contenteditable>00</span>
+                <span>:</span>
+                <span id="seconds">00</span>
+            </section>
+
+            <section id="controls" class="flex">
+                <button 
+                    data-action="toggleRunning" 
+                    class="ph ph-play-circle">
+                    <span class="sr-only">Iniciar contador</span>
+                </button>
+                <button 
+                    data-action="toggleRunning" 
+                    class="ph ph-pause-circle">
+                    <span class="sr-only">Pausar contador</span>
+                </button>
+                <button 
+                    data-action="reset" 
+                    class="ph ph-stop-circle">
+                    <span class="sr-only">Reiniciar contador</span>
+                </button>
+                <button 
+                    data-action="updateTimerPlus" 
+                    class="ph ph-plus-circle">
+                    <span class="sr-only">Aumentar 5 minutos</span>
+                </button>
+                <button 
+                    data-action="updateTimerMinus" 
+                    class="ph ph-minus-circle">
+                    <span class="sr-only">Diminuir 5 minutos</span>
+                </button>
+            </section>
+        </div>
+        <div class="music-box" id="sounds">
+            <div class="ph ph-tree" data-action="forest" id="forest">
+                <span class="sr-only">Som de floresta</span>
+            </div>
+            <div class="ph ph-cloud-rain" data-action="rain" id="rain">
+                <span class="sr-only">Som de chuva</span>
+            </div>
+            <div class="ph ph-storefront" data-action="coffeShop" id="coffeShop">
+                <span class="sr-only">Som de cafeteria</span>
+            </div>
+            <div class="ph ph-campfire" data-action="fireplace" id="fireplace">
+                <span class="sr-only">Som de fogueira</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
